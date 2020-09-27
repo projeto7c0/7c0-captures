@@ -7,6 +7,6 @@ def get_new_tweets():
     database.insere_lista(tweets)
 
 def get_new_tweets_election():
-    topo = 0
+    topo = database.recupera_ids_total_election()
     tweets = twitter.list_tweets_election(topo)
-    database.insere_lista(tweets)
+    database.insere_lista_election(tweets)
