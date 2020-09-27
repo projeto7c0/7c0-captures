@@ -10,3 +10,13 @@ def list_tweets_list(topo):
         tweets.append(status)
 
     return tweets
+
+def list_tweets_election(topo):
+    api = twitter_auth.autentica_election()
+
+    tweets = []
+
+    for status in tweepy.Cursor(api.list_timeline, tweet_mode='extended', owner_screen_name="7c0_eleicoes", slug="candidatos-prefeito", since_id=topo, count=200).items():
+        tweets.append(status)
+
+    return tweets

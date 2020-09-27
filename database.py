@@ -6,7 +6,7 @@ def insere_um(tweet, db):
     cursor = db.cursor()
 
     try:
-        sql = """INSERT INTO `mimic_tweets` (`idTweets`, `plain_text`,
+        sql = """INSERT INTO `tweets` (`idTweets`, `plain_text`,
             `timestamp_tw`, `handle`, `retweets`, `favs`, `object`)
             VALUES (%s, %s, %s, %s, %s, %s, %s);"""
         try:
